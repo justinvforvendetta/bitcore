@@ -3,6 +3,8 @@ var bignum = require('bignum');
 var Binary = require('binary');
 var Put = require('bufferput');
 var buffertools = require('buffertools');
+// var node_scrypt = require('scryptsy').scrypt;
+// add scrypt jane hash nodejs module
 var scryptJane = require('scrypt-jane-hash').scryptJane;
 var sjcl = require('../lib/sjcl');
 if (process.browser) {
@@ -61,10 +63,19 @@ var twoSha256 = exports.twoSha256 = function(data) {
 var sha256ripe160 = exports.sha256ripe160 = function(data) {
   return ripe160(sha256(data));
 };
+// var scrypt = exports.scrypt = function(data) {
+// scrypt(passwd, salt, N, r, p, dkLen)
+// return node_scrypt(data, data, 1024, 1, 1, 32);
+// };
+
+// var scryptJane = exports.scryptJane = function(data) {
+// scryptjane needs block.nTime and nChainStartTime
+//  return scryptJane(data, data, 1024, 1, 1, 32);
+//};
 
 var scryptJane = exports.scryptJane = function(data) {
-  // scryptJane(passwd, salt, N, r, p, dkLen)
-  return scryptJane(data, data, 1024, 1, 1, 32);
+// scryptjane needs block.nTime and nChainStartTime
+  return scryptJane(data, nTime, 1402845782);
 };
 
 /**
