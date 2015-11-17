@@ -83,8 +83,8 @@
     "async": "~0.2.10",
     "event-stream": "~3.1.5",
     "gulp-concat": "~2.2.0",
-    "gulp": "~3.8.2",
-    "scrypt-jane-hash": "0.0.2"
+    "gulp": "~3.8.2"
+    //"scrypt-jane-hash": "0.0.2"
   },
   "testling": {
     "harness": "mocha-bdd",
