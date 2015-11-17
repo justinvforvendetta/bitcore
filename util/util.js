@@ -5,7 +5,7 @@ var Put = require('bufferput');
 var buffertools = require('buffertools');
 // var node_scrypt = require('scryptsy').scrypt;
 // add scrypt jane hash nodejs module
-var node_scryptJane = require('scrypt-jane-hash').scryptJane;
+// var node_scryptJane = require('scrypt-jane-hash').scryptJane;
 var sjcl = require('../lib/sjcl');
 if (process.browser) {
   var hashjs = require('hash.js');
@@ -68,9 +68,9 @@ var sha256ripe160 = exports.sha256ripe160 = function(data) {
 // scrypt(passwd, salt, N, r, p, dkLen)
 // return node_scrypt(data, data, 1024, 1, 1, 32);
 // };
-var scryptJane = exports.scryptJane = function(data) {
-  return node_scryptJane(data, data, 1024, 1, 1, 32);
-};
+// var scryptJane = exports.scryptJane = function(data) {
+//  return node_scryptJane(data, data, 1024, 1, 1, 32);
+// };
 
 /**
  * Format a block hash like the official client does.
